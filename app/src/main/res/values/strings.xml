@@ -1,5 +1,11 @@
 <resources>
-    <string name="app_name">Nidheesh</string>
-    <string name="hello"> <b>Hit there!!</b> This is my first app on android. Hope you like it.</string>
-    <string name="button_text">Let\'s Roll</string>
+    <string name="app_name">7 tunes</string>
+    <string name="sound">playing sounds</string>
+    <string name="C">C</string>
+    <string name="D">D</string>
+    <string name="E">E</string>
+    <string name="F">F</string>
+    <string name="G">G</string>
+    <string name="A">A</string>
+    <string name="B">B</string>
 </resources>
