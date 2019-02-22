@@ -119,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
                     A=sounds.load(getApplicationContext(),R.raw.ega,1);
                     B=sounds.load(getApplicationContext(),R.raw.egb,1);
                 }
+
                 else if(i==5)//EDM
                 {
                     C=sounds.load(getApplicationContext(),R.raw.flc,1);
@@ -133,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-
+                Log.d("item","No Item selected");
             }
         });
     }
