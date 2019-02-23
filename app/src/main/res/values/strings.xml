@@ -1,19 +1,4 @@
 <resources>
-    <string name="app_name">7 tunes</string>
-    <string name="sound">playing sounds</string>
-    <string name="C">C</string>
-    <string name="D">D</string>
-    <string name="E">E</string>
-    <string name="F">F</string>
-    <string name="G">G</string>
-    <string name="A">A</string>
-    <string name="B">B</string>
-    <string-array name="instrum">
-        <item>Xylophone</item>
-        <item>Guitar</item>
-        <item>Piano</item>
-        <item>Cow Bell</item>
-        <item>EDM 1</item>
-        <item>EDM 2</item>
-    </string-array>
+    <string name="app_name">new app</string>
+
 </resources>
