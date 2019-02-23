@@ -10,10 +10,10 @@
     <string name="B">B</string>
     <string-array name="instrum">
         <item>Xylophone</item>
-        <item>Gutiar</item>
+        <item>Guitar</item>
         <item>Piano</item>
         <item>Cow Bell</item>
-        <item>Violin</item>
-        <item>EDM</item>
+        <item>EDM 1</item>
+        <item>EDM 2</item>
     </string-array>
 </resources>

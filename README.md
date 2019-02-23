@@ -6,5 +6,5 @@ You can select from the following list of instruments.
 2. Guitar
 3. Piano
 4. Cowbell
-5. EDM 1
-6. EDM 2
+5. Violin
+6. EDM
