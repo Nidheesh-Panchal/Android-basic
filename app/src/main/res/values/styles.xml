@@ -7,7 +7,6 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-
     <style name="KeyStyle">
         <item name="android:layout_weight">1</item>
         <item name="android:layout_marginTop">3dp</item>

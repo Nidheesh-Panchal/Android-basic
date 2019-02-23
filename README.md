@@ -1,5 +1,10 @@
 # Android
 
-It contains different android applications for normal use.
-1. first one is random dice roll app;
-2. play tunes on the phone (may try to include different musical isntruments).
+There are 6 instruments with 7 notes each.
+You can select from the following list of instruments.
+1. Xylophone
+2. Guitar
+3. Piano
+4. Cowbell
+5. EDM 1
+6. EDM 2
