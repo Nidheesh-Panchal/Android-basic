@@ -1,4 +1,26 @@
 <resources>
     <string name="app_name">Seize Quiz</string>
-
+    <string name="q1">Valentine\'s day is banned in Saudi Arabia.</string>
+    <string name="q2">A slug\'s blood is green.</string>
+    <string name="q3">Approximately one quarter of human bones are in the feet.</string>
+    <string name="q4">The total surface area of two human lungs is approximately 70 square metres.</string>
+    <string name="q5">In West Virginia, USA, if you accidentally hit an animal with your car, you are free to take it home to eat.</string>
+    <string name="q6">In London, UK, if you happen to die in the House of Parliament, you are technically entitled to a state funeral, because the building is considered too sacred a place.</string>
+    <string name="q7">It is illegal to pee in the Ocean in Portugal.</string>
+    <string name="q8">You can lead a cow down stairs but not up stairs.</string>
+    <string name="q9">Google was originally called \"Backrub\".</string>
+    <string name="q10">Buzz Aldrin\'s mother\'s maiden name was \"Moon\".</string>
+    <string name="q11">The loudest sound produced by any animal is 188 decibels. That animal is the African Elephant.</string>
+    <string name="q12">No piece of square dry paper can be folded in half more than 7 times.</string>
+    <string name="q13">Chocolate affects a dog\'s heart and nervous system; a few ounces are enough to kill a small dog.</string>
+    <string name="q14">Whaling / Whaling attack is a kind of phishing attacks that target senior executives and other high profile to access valuable information.</string>
+    <string name="q15">Freeware is software that is available for use at no monetary cost.</string>
+    <string name="q16">IPv6 Internet Protocol address is represented as eight groups of four Octal digits.</string>
+    <string name="q17">Twitter is an online social networking and blogging service.</string>
+    <string name="q18">Worms and trojan horses are easily detected and eliminated by antivirus software.</string>
+    <string name="q19">Adding a derived class to a base class requires fundamental changes to the base class</string>
+    <string name="q20">If no constructors can specified for a derived class, objects of the derived class will use the constructors in the base class</string>
+    <string name="true_button">True</string>
+    <string name="false_button">False</string>
+    <string name="score">0/20</string>
 </resources>
