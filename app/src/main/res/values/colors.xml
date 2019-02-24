@@ -3,13 +3,14 @@
 <resources>
 
     <color name="colorPrimaryDark">#000000</color>
-    <color name="red">#e74c3c</color>
+    <color name="red">#E74C3C</color>
     <color name="orange">#e67e22</color>
     <color name="yellow">#f1c40f</color>
     <color name="turquoise">#1abc9c</color>
-    <color name="green">#2ecc71</color>
+    <color name="green">#04E363</color>
     <color name="blue">#3498db</color>
     <color name="purple">#9b59b6</color>
-    <color name="spinner_text">#ffffff</color>
+    <color name="spinner_text">#FFFFFF</color>
+    <color name="back">#0652DD</color>
 
 </resources>
