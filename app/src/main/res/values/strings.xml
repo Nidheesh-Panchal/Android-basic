@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Seize Quiz</string>
+    <string name="correct">Correct Answer</string>
+    <string name="wrong">You Fool!!</string>
     <string name="q1">Valentine\'s day is banned in Saudi Arabia.</string>
     <string name="q2">A slug\'s blood is green.</string>
     <string name="q3">Approximately one quarter of human bones are in the feet.</string>
