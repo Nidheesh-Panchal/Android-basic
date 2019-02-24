@@ -22,5 +22,5 @@
     <string name="q20">If no constructors can specified for a derived class, objects of the derived class will use the constructors in the base class</string>
     <string name="true_button">True</string>
     <string name="false_button">False</string>
-    <string name="score">0/20</string>
+    <string name="score">Score: 0/20</string>
 </resources>
