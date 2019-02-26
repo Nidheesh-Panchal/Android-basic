@@ -2,5 +2,10 @@
     <string name="app_name">Weather App</string>
     <string name="default_location">Fetching Location</string>
     <string name="default_temp">...</string>
+    <string name="sunrise_text">Sunrise</string>
+    <string name="sunset_text">Sunset</string>
+    <string name="humidity">Humidity</string>
+    <string name="maxtemp">Max Temp</string>
+    <string name="mintemp">Min Temp</string>
 
 </resources>

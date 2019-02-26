@@ -20,6 +20,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.loopj.android.http.AsyncHttpClient;
@@ -50,6 +51,17 @@ public class MainActivity extends AppCompatActivity {
 
     LocationManager mLocationManager;//start or stop requesting location updates.
     LocationListener mLocationListener;//listen for any changes in location
+
+	TextView temper=findViewById(R.id.temp_text);
+	TextView city=findViewById(R.id.city_text);
+
+	ImageView condition=findViewById(R.id.condition_image);
+	Button changeCity=findViewById(R.id.change_city_button);
+	TextView sunr_text=findViewById(R.id.sunrise_text);
+	TextView suns_text=findViewById(R.id.sunset_text);
+	TextView humidity_text=findViewById(R.id.humidity_text);
+	TextView max_temp=findViewById(R.id.maxtemp_text);
+	TextView min_temp=findViewById(R.id.mintemp_text);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -175,7 +187,15 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateUI(weatherdata weather)
     {
+		sunr_text.setText(weather.getSunrise());
+		suns_text.setText(weather.getSunset());
+		temper.setText(weather.getTemperature());
+		humidity_text.setText(weather.getHumidity());
+		min_temp.setText(weather.getMintemp());
+		max_temp.setText(weather.getMaxtemp());
 
+		int resourceid=getResources().getIdentifier(weather.getIcon_name(),"drawable",getPackageName());
+		condition.setImageResource(resourceid);
     }
 }
 
