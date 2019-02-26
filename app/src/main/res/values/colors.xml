@@ -10,6 +10,6 @@
     <color name="green">#2ecc71</color>
     <color name="blue">#3498db</color>
     <color name="purple">#9b59b6</color>
-    <color name="spinner_text">#ffffff</color>
+    <color name="spinner_text">#FFFFFF</color>
 
 </resources>

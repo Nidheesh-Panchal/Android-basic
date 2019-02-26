@@ -151,6 +151,16 @@ public class MainActivity extends AppCompatActivity {
                 //use json mate to get the proper keys and corresponding values of the response
                 Log.d("weather","Response : "+response.toString());
                 weatherdata weather=weatherdata.fromJSON(response);
+                Log.d("weather","city : "+weather.getCity());
+                Log.d("weather","temperature : " + weather.getTemperature());
+                Log.d("weather","Minimum Temperature : " + weather.getMintemp());
+                Log.d("weather","Maximum Temperature : " + weather.getMaxtemp());
+                Log.d("weather","Humidity : " + weather.getHumidity());
+                Log.d("weather","Sunrise : " + weather.getSunrise());
+                Log.d("weather","Sunset : " + weather.getSunset());
+                Log.d("weather","Condition : "+weather.getIcon_name());
+
+                updateUI(weather);
             }
 
             @Override
@@ -161,6 +171,11 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Network Request Failed!", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void updateUI(weatherdata weather)
+    {
+
     }
 }
 

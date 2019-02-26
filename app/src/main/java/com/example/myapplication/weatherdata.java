@@ -1,7 +1,15 @@
 package com.example.myapplication;
 
+import android.util.Log;
+
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.sql.Time;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.util.Date;
+import java.util.TimeZone;
 
 public class weatherdata
 {
@@ -23,15 +31,15 @@ public class weatherdata
 			data.city=jsonObject.getString("name");
 			data.condition=jsonObject.getJSONArray("weather").getJSONObject(0).getInt("id");
 
-			double temp=jsonObject.getJSONObject("main").getDouble("temp")+273.15;
+			double temp=jsonObject.getJSONObject("main").getDouble("temp")- 273.15;
 			int t=(int) Math.rint(temp);
 			data.temperature=Integer.toString(t);
 
-			temp=jsonObject.getJSONObject("main").getDouble("temp_min")+273.15;
+			temp=jsonObject.getJSONObject("main").getDouble("temp_min")-273.15;
 			t=(int) Math.rint(temp);
 			data.mintemp=Integer.toString(t);
 
-			temp=jsonObject.getJSONObject("main").getDouble("temp_max");
+			temp=jsonObject.getJSONObject("main").getDouble("temp_max")-273.15;
 			t=(int) Math.rint(temp);
 			data.maxtemp=Integer.toString(t);
 
@@ -40,12 +48,20 @@ public class weatherdata
 			data.humidity=Integer.toString(t);
 
 			temp=jsonObject.getJSONObject("sys").getDouble("sunrise");
-			t=(int) Math.rint(temp);
-			data.sunrise=Integer.toString(t);
+			Date date=new Date((long)temp*1000L);
+			SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss z");
+			//sdf.setTimeZone(TimeZone.getTimeZone("GMT+5:30"));
+			data.sunrise = sdf.format(date);
+			data.sunrise=data.sunrise.substring(11,16);
+			//Log.d("weather",""+data.sunrise);
 
 			temp=jsonObject.getJSONObject("sys").getDouble("sunset");
-			t=(int) Math.rint(temp);
-			data.sunset=Integer.toString(t);
+			date = new Date((long)temp*1000L);
+			sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss z");
+			//sdf.setTimeZone(TimeZone.getTimeZone("GMT+5:30"));
+			data.sunset = sdf.format(date);
+			data.sunset=data.sunset.substring(11,16);
+			//Log.d("weather",""+data.sunset);
 
 			data.icon_name=getname(data.condition);
 
@@ -108,31 +124,27 @@ public class weatherdata
 		{
 			return "tstorm3";
 		}
-		return "Undefined";
+		return "dunno";
 	}
 
 	public String getCity() {
 		return city;
 	}
 
-	public int getCondition() {
-		return condition;
-	}
-
 	public String getTemperature() {
-		return temperature;
+		return temperature + "°C";
 	}
 
 	public String getHumidity() {
-		return humidity;
+		return humidity+"%";
 	}
 
 	public String getMintemp() {
-		return mintemp;
+		return mintemp + "°C";
 	}
 
 	public String getMaxtemp() {
-		return maxtemp;
+		return maxtemp + "°C";
 	}
 
 	public String getSunrise() {
