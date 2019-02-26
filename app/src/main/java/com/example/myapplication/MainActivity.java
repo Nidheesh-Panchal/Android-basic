@@ -20,6 +20,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -139,20 +140,25 @@ public class MainActivity extends AppCompatActivity {
 
     private void networking(RequestParams params)
     {
+        //using Async for asynchronization of networking because we do not want our app to freeze
+        //until request is fulfilled.
         AsyncHttpClient client=new AsyncHttpClient();
         client.get(WEATHER_SITE,params,new JsonHttpResponseHandler()
         {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 super.onSuccess(statusCode, headers, response);
+                //use json mate to get the proper keys and corresponding values of the response
                 Log.d("weather","Response : "+response.toString());
+                weatherdata weather=weatherdata.fromJSON(response);
             }
 
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
                 super.onFailure(statusCode, headers, throwable, errorResponse);
                 Log.e("weather","Error : "+throwable.toString());
-                Log.d("weather","Ststus Code : "+statusCode);
+                Log.d("weather","Status Code : "+statusCode);
+                Toast.makeText(MainActivity.this, "Network Request Failed!", Toast.LENGTH_SHORT).show();
             }
         });
     }
