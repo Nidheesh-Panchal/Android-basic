@@ -52,16 +52,15 @@ public class MainActivity extends AppCompatActivity {
     LocationManager mLocationManager;//start or stop requesting location updates.
     LocationListener mLocationListener;//listen for any changes in location
 
-	TextView temper=findViewById(R.id.temp_text);
-	TextView city=findViewById(R.id.city_text);
-
-	ImageView condition=findViewById(R.id.condition_image);
-	Button changeCity=findViewById(R.id.change_city_button);
-	TextView sunr_text=findViewById(R.id.sunrise_text);
-	TextView suns_text=findViewById(R.id.sunset_text);
-	TextView humidity_text=findViewById(R.id.humidity_text);
-	TextView max_temp=findViewById(R.id.maxtemp_text);
-	TextView min_temp=findViewById(R.id.mintemp_text);
+	TextView temper;
+	TextView city;
+	ImageView condition;
+	Button changeCity;
+	TextView sunr_text;
+	TextView suns_text;
+	TextView humidity_text;
+	TextView max_temp;
+	TextView min_temp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +68,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Log.d("weather", "" + locationmanager);
+
+	    temper=findViewById(R.id.temp_text);
+	    city=findViewById(R.id.city_text);
+	    condition=findViewById(R.id.condition_image);
+	    changeCity=findViewById(R.id.change_city_button);
+	    sunr_text=findViewById(R.id.sunrise_text);
+	    suns_text=findViewById(R.id.sunset_text);
+	    humidity_text=findViewById(R.id.humidity_text);
+	    max_temp=findViewById(R.id.maxtemp_text);
+	    min_temp=findViewById(R.id.mintemp_text);
     }
 
     @Override
@@ -193,6 +202,7 @@ public class MainActivity extends AppCompatActivity {
 		humidity_text.setText(weather.getHumidity());
 		min_temp.setText(weather.getMintemp());
 		max_temp.setText(weather.getMaxtemp());
+		city.setText(weather.getCity());
 
 		int resourceid=getResources().getIdentifier(weather.getIcon_name(),"drawable",getPackageName());
 		condition.setImageResource(resourceid);
