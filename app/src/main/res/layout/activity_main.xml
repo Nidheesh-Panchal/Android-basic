@@ -48,9 +48,9 @@
         android:id="@+id/temp_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="96dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="@string/default_temp"
         android:textAlignment="center"
@@ -59,10 +59,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/condition_image"
         app:layout_constraintEnd_toStartOf="@+id/change_city_button"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.104"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.192" />
+        app:layout_constraintVertical_bias="0.173" />
 
 
     <ImageView
@@ -78,7 +78,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.469"
+        app:layout_constraintVertical_bias="0.528"
         app:srcCompat="@drawable/dunno" />
 
 
@@ -87,7 +87,7 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="92dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/city_text"
@@ -95,21 +95,21 @@
         app:layout_constraintHorizontal_bias="0.925"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/condition_image"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.3"
         app:srcCompat="@drawable/sunrise_512" />
 
     <ImageView
         android:id="@+id/sunset_image"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/city_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/sunrise_image"
         app:layout_constraintTop_toBottomOf="@+id/condition_image"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.3"
         app:srcCompat="@drawable/sunset_512" />
 
     <TextView
@@ -128,7 +128,7 @@
         app:layout_constraintHorizontal_bias="0.292"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sunrise_image"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.062" />
 
     <TextView
         android:id="@+id/sunset_text"
@@ -146,7 +146,7 @@
         app:layout_constraintHorizontal_bias="0.694"
         app:layout_constraintStart_toEndOf="@+id/sunrise_image"
         app:layout_constraintTop_toBottomOf="@+id/sunset_image"
-        app:layout_constraintVertical_bias="0.027" />
+        app:layout_constraintVertical_bias="0.019" />
 
     <TextView
         android:id="@+id/textView5"
@@ -197,10 +197,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/condition_image"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.025"
+        app:layout_constraintHorizontal_bias="0.022"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/temp_text"
-        app:layout_constraintVertical_bias="0.608" />
+        app:layout_constraintVertical_bias="0.553" />
 
     <TextView
         android:id="@+id/maxtemp_text"
@@ -215,10 +215,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/condition_image"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintHorizontal_bias="0.053"
         app:layout_constraintStart_toEndOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/temp_text"
-        app:layout_constraintVertical_bias="0.608" />
+        app:layout_constraintVertical_bias="0.553" />
 
     <TextView
         android:id="@+id/textView9"
@@ -252,7 +252,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.067"
         app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/temp_text"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/temp_text" />
 
 </android.support.constraint.ConstraintLayout>
