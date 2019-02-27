@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("weather", "Location services turned off");
             }
         };
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
             // here to request the missing permissions, and then overriding
@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
             // for ActivityCompat#requestPermissions for more details.
 
             ActivityCompat.requestPermissions(this,
-                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION},REQUEST_CODE);
+                    new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},REQUEST_CODE);
             return;
         }
         mLocationManager.requestLocationUpdates(LOCATION_PROVIDER, MIN_TIME, MIN_DISTANCE, mLocationListener);
@@ -151,6 +151,7 @@ public class MainActivity extends AppCompatActivity {
             else
             {
                 Log.d("weather","Location permission denied");
+	            Toast.makeText(MainActivity.this, "Turn on Location and Allow app to access location", Toast.LENGTH_SHORT).show();
             }
         }
         else

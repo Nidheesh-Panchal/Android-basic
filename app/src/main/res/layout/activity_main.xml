@@ -87,27 +87,29 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="84dp"
         android:layout_marginEnd="92dp"
-        app:layout_constraintBottom_toTopOf="@+id/sunrise_text"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/city_text"
         app:layout_constraintEnd_toStartOf="@+id/sunset_image"
         app:layout_constraintHorizontal_bias="0.925"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/condition_image"
-        app:layout_constraintVertical_bias="0.266"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/sunrise_512" />
 
     <ImageView
         android:id="@+id/sunset_image"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="84dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/sunset_text"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/city_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/sunrise_image"
         app:layout_constraintTop_toBottomOf="@+id/condition_image"
-        app:layout_constraintVertical_bias="0.025"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/sunset_512" />
 
     <TextView
@@ -115,9 +117,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="44dp"
         android:text="@string/sunrise_text"
         android:textColor="@color/spinner_text"
         android:textSize="18sp"
@@ -126,14 +128,14 @@
         app:layout_constraintHorizontal_bias="0.292"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sunrise_image"
-        app:layout_constraintVertical_bias="0.52" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/sunset_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="@string/sunset_text"
@@ -144,7 +146,7 @@
         app:layout_constraintHorizontal_bias="0.694"
         app:layout_constraintStart_toEndOf="@+id/sunrise_image"
         app:layout_constraintTop_toBottomOf="@+id/sunset_image"
-        app:layout_constraintVertical_bias="0.52" />
+        app:layout_constraintVertical_bias="0.027" />
 
     <TextView
         android:id="@+id/textView5"
@@ -197,8 +199,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.025"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/temp_text"
+        app:layout_constraintVertical_bias="0.608" />
 
     <TextView
         android:id="@+id/maxtemp_text"
@@ -225,9 +227,11 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="84dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:text="@string/mintemp"
         android:textColor="@color/spinner_text"
         android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/condition_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.024"
         app:layout_constraintStart_toStartOf="parent"
