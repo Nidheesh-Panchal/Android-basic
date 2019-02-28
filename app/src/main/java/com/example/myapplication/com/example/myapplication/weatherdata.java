@@ -1,5 +1,4 @@
-package com.example.myapplication;
-
+package  com.example.myapplication;
 import android.util.Log;
 
 import org.json.JSONException;
@@ -17,11 +16,11 @@ public class weatherdata
 	private int condition;
 	private String temperature;
 	private String humidity;
-	private String mintemp;
-	private String maxtemp;
+	private String pressure;
 	private String sunrise;
 	private String sunset;
 	private String icon_name;
+	private String wind;
 
 	public static weatherdata fromJSON(JSONObject jsonObject)
 	{
@@ -35,13 +34,17 @@ public class weatherdata
 			int t=(int) Math.rint(temp);
 			data.temperature=Integer.toString(t);
 
-			temp=jsonObject.getJSONObject("main").getDouble("temp_min")-273.15;
+			temp=jsonObject.getJSONObject("main").getDouble("pressure");
 			t=(int) Math.rint(temp);
-			data.mintemp=Integer.toString(t);
+			data.pressure=Integer.toString(t);
 
-			temp=jsonObject.getJSONObject("main").getDouble("temp_max")-273.15;
+			temp=jsonObject.getJSONObject("wind").getDouble("speed");
 			t=(int) Math.rint(temp);
-			data.maxtemp=Integer.toString(t);
+			data.wind=Integer.toString(t) + " m/s";
+
+			temp=jsonObject.getJSONObject("wind").getDouble("deg");
+			t=(int) Math.rint(temp);
+			data.wind=data.wind + " " + Integer.toString(t) + " " + "deg";
 
 			temp=jsonObject.getJSONObject("main").getDouble("humidity");
 			t=(int) Math.rint(temp);
@@ -132,6 +135,7 @@ public class weatherdata
 	}
 
 	public String getTemperature() {
+		Log.d("weather",temperature);
 		return temperature + "°C";
 	}
 
@@ -139,12 +143,12 @@ public class weatherdata
 		return humidity+"%";
 	}
 
-	public String getMintemp() {
-		return mintemp + "°C";
+	public String getPressure() {
+		return pressure + "hPa";
 	}
 
-	public String getMaxtemp() {
-		return maxtemp + "°C";
+	public String getwind() {
+		return wind;
 	}
 
 	public String getSunrise() {

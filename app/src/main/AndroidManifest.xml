@@ -12,6 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.example.myapplication.change_city"
+            android:screenOrientation="portrait">
+        </activity>
         <activity android:name="com.example.myapplication.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>

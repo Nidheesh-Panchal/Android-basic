@@ -3,6 +3,7 @@ package com.example.myapplication;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
@@ -27,6 +28,7 @@ import android.widget.Toast;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+import com.example.myapplication.weatherdata;
 
 import org.json.JSONObject;
 
@@ -79,17 +81,43 @@ public class MainActivity extends AppCompatActivity {
 	    humidity_text=findViewById(R.id.humidity_text);
 	    max_temp=findViewById(R.id.maxtemp_text);
 	    min_temp=findViewById(R.id.mintemp_text);
+
+	    changeCity.setOnClickListener(new View.OnClickListener() {
+		    @Override
+		    public void onClick(View view) {
+			    Intent intent=new Intent(MainActivity.this, com.example.myapplication.change_city.class);
+			    startActivity(intent);
+		    }
+	    });
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d("weather", "onResume() called");
-        Log.d("weather", "Getting weather for current location");
-        weatherlocation();
+        Intent newintent=getIntent();
+        String city_name=newintent.getStringExtra("city");
+        if(city_name!=null)
+        {
+        	weathercity(city_name);
+        }
+        //Log.d("weather", "onResume() called");
+        else
+        {
+        	Log.d("weather", "Getting weather for current location");
+	        weatherlocation();
+        }
+
     }
 
-    @SuppressLint("MissingPermission")
+	private void weathercity(String city_name)
+	{
+		RequestParams requestParams=new RequestParams();
+		requestParams.put("q",city_name);
+		requestParams.put("appid",APP_ID);
+		networking(requestParams);
+	}
+
+	@SuppressLint("MissingPermission")
     private void weatherlocation() {
         mLocationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         mLocationListener = new LocationListener() {
@@ -174,16 +202,7 @@ public class MainActivity extends AppCompatActivity {
                 super.onSuccess(statusCode, headers, response);
                 //use json mate to get the proper keys and corresponding values of the response
                 Log.d("weather","Response : "+response.toString());
-                weatherdata weather=weatherdata.fromJSON(response);
-                Log.d("weather","city : "+weather.getCity());
-                Log.d("weather","temperature : " + weather.getTemperature());
-                Log.d("weather","Minimum Temperature : " + weather.getMintemp());
-                Log.d("weather","Maximum Temperature : " + weather.getMaxtemp());
-                Log.d("weather","Humidity : " + weather.getHumidity());
-                Log.d("weather","Sunrise : " + weather.getSunrise());
-                Log.d("weather","Sunset : " + weather.getSunset());
-                Log.d("weather","Condition : "+weather.getIcon_name());
-
+                weatherdata weather= com.example.myapplication.weatherdata.fromJSON(response);
                 updateUI(weather);
             }
 
@@ -197,14 +216,14 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void updateUI(weatherdata weather)
+    private void updateUI(com.example.myapplication.weatherdata weather)
     {
 		sunr_text.setText(weather.getSunrise());
 		suns_text.setText(weather.getSunset());
 		temper.setText(weather.getTemperature());
 		humidity_text.setText(weather.getHumidity());
-		min_temp.setText(weather.getMintemp());
-		max_temp.setText(weather.getMaxtemp());
+		min_temp.setText(weather.getPressure());
+		max_temp.setText(weather.getwind());
 		city.setText(weather.getCity());
 
 		int resourceid=getResources().getIdentifier(weather.getIcon_name(),"drawable",getPackageName());

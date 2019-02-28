@@ -5,8 +5,8 @@
     <string name="sunrise_text">Sunrise</string>
     <string name="sunset_text">Sunset</string>
     <string name="humidity">Humidity</string>
-    <string name="maxtemp">Max Temp</string>
-    <string name="mintemp">Min Temp</string>
+    <string name="pressure">Pressure</string>
+    <string name="wind">Wind</string>
     <string name="title_activity_change__city">Change_City</string>
     <string name="changecity">Change City</string>
     <string name="enter_city">Enter City</string>
