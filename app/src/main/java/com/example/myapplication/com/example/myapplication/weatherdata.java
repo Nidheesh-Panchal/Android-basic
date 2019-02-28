@@ -144,7 +144,7 @@ public class weatherdata
 	}
 
 	public String getPressure() {
-		return pressure + "hPa";
+		return pressure + " hPa";
 	}
 
 	public String getwind() {
