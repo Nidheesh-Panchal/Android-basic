@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -88,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
         weatherlocation();
     }
 
+    @SuppressLint("MissingPermission")
     private void weatherlocation() {
         mLocationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         mLocationListener = new LocationListener() {
@@ -137,28 +139,28 @@ public class MainActivity extends AppCompatActivity {
         mLocationManager.requestLocationUpdates(LOCATION_PROVIDER, MIN_TIME, MIN_DISTANCE, mLocationListener);
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        //to check if the callback is to our request of location only.
-        if(requestCode==REQUEST_CODE)
-        {
-            if(grantResults.length>0 && grantResults[0]==PackageManager.PERMISSION_GRANTED)
-            {
-                Log.d("weather","Location permission granted");
-                weatherlocation();
-            }
-            else
-            {
-                Log.d("weather","Location permission denied");
-	            Toast.makeText(MainActivity.this, "Turn on Location and Allow app to access location", Toast.LENGTH_SHORT).show();
-            }
-        }
-        else
-        {
-            Log.d("weather","Location permission denied");
-        }
-    }
+	@Override
+	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+		super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+		//to check if the callback is to our request of location only.
+		if(requestCode==REQUEST_CODE)
+		{
+			if(grantResults.length>0 && grantResults[0]==PackageManager.PERMISSION_GRANTED)
+			{
+				Log.d("weather","Location permission granted");
+				weatherlocation();
+			}
+			else
+			{
+				Log.d("weather","Location permission denied");
+				Toast.makeText(MainActivity.this, "Turn on Location and Allow app to access location", Toast.LENGTH_SHORT).show();
+			}
+		}
+		else
+		{
+			Log.d("weather","Location permission denied");
+		}
+	}
 
     private void networking(RequestParams params)
     {

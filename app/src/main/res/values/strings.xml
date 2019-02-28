@@ -8,7 +8,7 @@
     <string name="maxtemp">Max Temp</string>
     <string name="mintemp">Min Temp</string>
     <string name="title_activity_change__city">Change_City</string>
-    <string name="chagnecity">Change City</string>
+    <string name="changecity">Change City</string>
     <string name="enter_city">Enter City</string>
 
 </resources>
